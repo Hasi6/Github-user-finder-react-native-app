@@ -3,17 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "chat-app": {
+    "chat": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/chat-app",
+            "outputPath": "dist/chat",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -58,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "chat-app:build"
+            "browserTarget": "chat:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "chat-app:build:production"
+              "browserTarget": "chat:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "chat-app:build"
+            "browserTarget": "chat:build"
           }
         },
         "test": {
@@ -80,7 +84,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -103,7 +107,7 @@
         }
       }
     },
-    "chat-app-e2e": {
+    "chat-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "chat-app:serve"
+            "devServerTarget": "chat:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "chat-app:serve:production"
+              "devServerTarget": "chat:serve:production"
             }
           }
         },
@@ -132,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "chat-app"
+  "defaultProject": "chat"
 }
