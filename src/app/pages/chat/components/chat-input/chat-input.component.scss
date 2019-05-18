@@ -1,0 +1,15 @@
+@import '../../../../../styles/variables.scss';
+.new-message-wrapper {
+    .input-group {
+        align-self: flex-end;
+    }
+    .form-control {
+        border-radius: 0;
+        border: 0;
+        background: $light-gray;
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+}
