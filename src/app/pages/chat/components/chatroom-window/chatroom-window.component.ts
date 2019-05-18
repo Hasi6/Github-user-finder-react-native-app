@@ -7,6 +7,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatroomWindowComponent implements OnInit {
 
+  public dummyData = [
+    {
+      message: 'Hasi is the best',
+      createdAt: new Date(),
+      sender: {
+        firstName: 'Hasitha',
+        lastName: 'Chandula',
+        photoUrl: 'http://via.placeholder.com/150x150'
+      }
+    },
+    {
+      message: 'Hasi is the best',
+      createdAt: new Date(),
+      sender: {
+        firstName: 'Hasitha',
+        lastName: 'Chandula',
+        photoUrl: 'http://via.placeholder.com/150x150'
+      }
+    },
+    {
+      message: 'Hasi is the best',
+      createdAt: new Date(),
+      sender: {
+        firstName: 'Hasitha',
+        lastName: 'Chandula',
+        photoUrl: 'http://via.placeholder.com/150x150'
+      }
+    },
+    {
+      message: 'Hasi is the best',
+      createdAt: new Date(),
+      sender: {
+        firstName: 'Hasitha',
+        lastName: 'Chandula',
+        photoUrl: 'http://via.placeholder.com/150x150'
+      }
+    },
+  ];
+
   constructor() { }
 
   ngOnInit() {

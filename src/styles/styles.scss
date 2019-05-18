@@ -9,3 +9,11 @@ body {
 button {
     width: 100%;
 }
+
+.container {
+    height: calc(100vh - 80px) !important;
+}
+
+.navbar {
+    height: 60px;
+}
