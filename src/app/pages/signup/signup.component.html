@@ -1,0 +1,32 @@
+<div class="container justyfy-content-center align-items-center">
+    <div class="form-wrapper text-center">
+        <h2 class="tetx-center">Signup</h2>
+        <form novalidate [formGroup]="signupForm" (submit)="submit()">
+
+            <div class="name-wrapper d-flex">
+
+                <div class="form-group mr-2">
+                    <input type="text" class="form-control" name="firstName" id="first-name-input" placeholder="First Name" formControlName="firstName">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="lastName" id="last-name-input" placeholder="Last Name" formControlName="lastName">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email-input" placeholder="Email" formControlName="email">
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" name="email" id="email-input" placeholder="Password" formControlName="password">
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block" [disabled]="!signupForm.valid">Login</button>
+
+        </form>
+
+        <small><a routerLink="/login">Already Have an Account</a></small>
+    </div>
+</div>
