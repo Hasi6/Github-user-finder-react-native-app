@@ -1,0 +1,12 @@
+@import '../../../styles/variables.scss';
+span {
+    color: #ffffff;
+}
+
+a {
+    color: $light-gray;
+    margin-left: 3em;
+    &.active {
+        border-bottom: 3px solid $gold;
+    }
+}
