@@ -1,3 +1,6 @@
+import { AlertService } from './../../services/alert.service';
+import { AlertType } from './../../enums/alert-type.enum';
+import { Alert } from './../../classes/alert';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
   public signupForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private alertService: AlertService) {
     this.createForm();
   }
 
@@ -26,9 +29,15 @@ export class SignupComponent implements OnInit {
   }
 
   public submit(): void {
-    //TODO call the auth service
+    if(this.signupForm.valid){
+      //TODO call the auth service
     const {firstName, lastName, email, password,} = this.signupForm.value;
     console.log(`First Name: ${firstName}, Last Name: ${lastName}, Email: ${email}, Password: ${password}`);
+    }
+    else{
+      const failedSignupAlert = new Alert('Please Enter a valid Name, email and password, and Try Again', AlertType.Danger);
+      this.alertService.alerts.next(failedSignupAlert);
+    }
   }
 
 }

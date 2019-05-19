@@ -2,7 +2,7 @@ import { AlertService } from './services/alert.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AlertModule } from '../../node_modules/ng2-bootstrap/alert/alert.module';
+import { AlertModule } from '../../node_modules/ngx-bootstrap';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,7 +37,7 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    AlertModule
+    AlertModule.forRoot(),
   ],
   providers: [
     AlertService
