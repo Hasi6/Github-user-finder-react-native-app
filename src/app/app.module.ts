@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AlertModule } from '../../node_modules/ngx-bootstrap';
+import { AuthService } from './services/auth.service';
+
 
 import { NgxLoadingModule } from 'ngx-loading';
 
@@ -45,7 +47,8 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
   ],
   providers: [
     AlertService,
-    LoadingService
+    LoadingService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
