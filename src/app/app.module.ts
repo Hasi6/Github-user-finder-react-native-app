@@ -1,8 +1,11 @@
+import { LoadingService } from './services/loading.service';
 import { AlertService } from './services/alert.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AlertModule } from '../../node_modules/ngx-bootstrap';
+
+import { NgxLoadingModule } from 'ngx-loading';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,9 +41,11 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
     ReactiveFormsModule,
     FormsModule,
     AlertModule.forRoot(),
+    NgxLoadingModule
   ],
   providers: [
-    AlertService
+    AlertService,
+    LoadingService
   ],
   bootstrap: [AppComponent]
 })
