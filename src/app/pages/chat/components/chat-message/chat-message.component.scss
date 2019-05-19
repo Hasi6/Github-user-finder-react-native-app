@@ -1,10 +1,10 @@
 @import '../../../../../styles/variables.scss';
 .chat-message {
     padding: 1.5em;
-    img {
+    .image-wrapper {
         margin-right: 1em;
-        height: 100px;
-        width: 100px;
+        height: 50px;
+        width: 50px;
         object-fit: cover;
     }
     name {
