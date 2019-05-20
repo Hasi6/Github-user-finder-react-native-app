@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { AuthGuard } from './guards/auth.guard';
 import { LoadingService } from './services/loading.service';
 import { AlertService } from './services/alert.service';
@@ -13,6 +14,10 @@ import { NgxLoadingModule } from 'ngx-loading';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -44,7 +49,11 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
     ReactiveFormsModule,
     FormsModule,
     AlertModule.forRoot(),
-    NgxLoadingModule
+    NgxLoadingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'chatApp'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
   ],
   providers: [
     AlertService,

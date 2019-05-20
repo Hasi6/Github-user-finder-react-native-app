@@ -4,7 +4,7 @@ import { AlertService } from './../services/alert.service';
 import { AuthService } from './../services/auth.service';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router'
+import { CanActivate } from '@angular/router';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { map, take, tap } from 'rxjs/operators';
 
